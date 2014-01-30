@@ -1,0 +1,34 @@
+{
+  "author": "Kovacs Arthur",
+  "name": "articulate-angular",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ArthurianX/articulate-angular",
+  "licenses": {
+    "type": "MIT",
+    "url": ""
+  },
+  "bugs": "https://github.com/ArthurianX/articulate-angular/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ArthurianX/articulate-angular.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-recess": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-karma": "~0.6.2",
+    "grunt-ngmin": "0.0.3",
+    "grunt-html2js": "~0.2.4",
+    "grunt-contrib-coffee": "~0.8.0",
+    "grunt-coffeelint": "0.0.8",
+    "grunt-conventional-changelog": "~0.1.1",
+    "grunt-bump": "0.0.13",
+    "protractor": "0.16.1"
+  }
+}

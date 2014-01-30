@@ -1,0 +1,24 @@
+{
+  "name": "articulate-angular",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.2.10",
+    "angular-cookie": "latest",
+    "angular-animate": "latest",
+    "angular-promise-tracker": "latest",
+    "angular-ui-router-anim-in-out": "0.0.5",
+    "angular-ui-router": "#0.2.8-bowratic-tedium",
+    "angular-ui-utils": "~0.0.4",
+    "hammerjs": "~1.0.6",
+    "angular-hammer": "~1.0.3",
+    "angular-rn-carousel": "~0.1.4",
+    "angular-touch": "~1.2.8",
+    "angular-mocks": "~1.2.10",
+    "ocLazyLoad": "~0.0.2"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "~1.2.10",
+    "angular-touch": "~1.2.8"
+  }
+}
