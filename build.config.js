@@ -70,16 +70,21 @@ module.exports = {
             'vendor/angular-ui-router/release/angular-ui-router.min.js',
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/angular-promise-tracker/promise-tracker.min.js',
+            'vendor/angular-sanitize/angular-sanitize.min.js',
             'vendor/angular-rn-carousel/dist/angular-carousel.min.js',
             'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
             'vendor/angular-touch/angular-touch.min.js',
             'vendor/hammerjs/hammer.min.js',
             'vendor/angular-hammer/angular-hammer.js',
-            'vendor/ocLazyLoad/ocLazyLoad.js'
+            'vendor/ocLazyLoad/ocLazyLoad.js',
+            'vendor/angular-bootstrap/ui-bootstrap.min.js',
+            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'
 
         ],
         css: [
-            //'vendor/angular-ui-router-anim-in-out-master/css/anim-in-out.css'
+            'vendor/bootstrap/dist/css/bootstrap.min.css',
+            'vendor/bootstrap/dist/css/bootstrap-theme.min.css',
+            'vendor/font-awesome/css/font-awesome.min.css'
         ],
         assets: [
         ]

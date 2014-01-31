@@ -2,23 +2,26 @@
   "name": "articulate-angular",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.2.10",
+    "angular": "~1.2.11",
     "angular-cookie": "latest",
-    "angular-animate": "latest",
-    "angular-promise-tracker": "latest",
+    "angular-animate": "~1.2.11",
+    "angular-promise-tracker": "~2.0.0-beta2",
     "angular-ui-router-anim-in-out": "0.0.5",
     "angular-ui-router": "#0.2.8-bowratic-tedium",
     "angular-ui-utils": "~0.0.4",
     "hammerjs": "~1.0.6",
     "angular-hammer": "~1.0.3",
-    "angular-rn-carousel": "~0.1.4",
-    "angular-touch": "~1.2.8",
+    "angular-rn-carousel": "~0.1.6",
+    "angular-touch": "latest",
+    "angular-sanitize": "latest",
     "angular-mocks": "~1.2.10",
-    "ocLazyLoad": "~0.0.2"
+    "ocLazyLoad": "~0.0.2",
+    "bootstrap": "~3.1.0",
+    "font-awesome": "~4.0.3",
+    "angular-bootstrap": "latest"
   },
   "devDependencies": {},
   "resolutions": {
-    "angular": "~1.2.10",
-    "angular-touch": "~1.2.8"
+    "angular": "1.2.11-build.2195+sha.29432ff"
   }
 }
