@@ -13,7 +13,7 @@
 
     <!-- compiled CSS -->
     <% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
     <% }); %>
 
     <!-- compiled JavaScript -->
@@ -23,9 +23,9 @@
     <base href="/">
 </head>
 <body ng-class="getCurrentLocation();">
-    <ng-include src="'templates/navigation.tpl.html'"></ng-include>
-    <ng-include src="'templates/header.tpl.html'"></ng-include>
-    <div ui-view="main" class="content anim-in-out anim-fade anim-slide-below" data-anim-speed="500"></div>
-    <ng-include src="'templates/footer.tpl.html'"></ng-include>
+<ng-include src="'templates/navigation.tpl.html'"></ng-include>
+<ng-include src="'templates/header.tpl.html'"></ng-include>
+<div ui-view="main" class="content anim-in-out anim-fade anim-slide-below" data-anim-speed="500"></div>
+<ng-include src="'templates/footer.tpl.html'"></ng-include>
 </body>
 </html>

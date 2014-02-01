@@ -8,14 +8,19 @@
 
                     <p>{{ github.commits.latest.commit.committer.date | date:"MMM d, y hh:mm" }}<br>
                         by <a href="#!/">{{ github.commits.latest.author.login }}</a> on branch
-                        <a ng-href="https://github.com/arthurianx/articulate-angular/tree/{{ github.branch }}" rel="external">{{ github.branch }}</a></p>
+                        <a ng-href="https://github.com/arthurianx/articulate-angular/tree/{{ github.branch }}"
+                           rel="external">{{ github.branch }}</a></p>
 
                     <blockquote class="muted"><i>{{ github.commits.latest.commit.message }}</i></blockquote>
                     <a class="btn btn-sm btn-default" href="{{ github.commits.latest.html_url }}">More details</a>
                 </div>
 
                 <div class="col-md-5">
-                    <h3>Issues <small class="pull-right"><a href="https://github.com/arthurianx/articulate-angular/issues?state=open">show all</a></small></h3>
+                    <h3>Issues
+                        <small class="pull-right"><a
+                                href="https://github.com/arthurianx/articulate-angular/issues?state=open">show all</a>
+                        </small>
+                    </h3>
 
                     <ul class="list-unstyled separated">
                         <li ng-repeat="issue in github.issues | limitTo:8 ">
@@ -26,11 +31,15 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h3>Activity <small class="pull-right"><a href="https://github.com/arthurianx/articulate-angular/pulse">show all</a></small></h3>
+                    <h3>Activity
+                        <small class="pull-right"><a href="https://github.com/arthurianx/articulate-angular/pulse">show
+                            all</a></small>
+                    </h3>
 
                     <ul class="list-unstyled separated">
                         <li ng-repeat="e in github.events | limitTo: 5">
-                            <small class="muted">{{ e.created_at | date:"MMM d, y, hh:mm"}}</small><br>
+                            <small class="muted">{{ e.created_at | date:"MMM d, y, hh:mm"}}</small>
+                            <br>
                             <a ng-href="{{ e.actor.url }}" rel="external nofollow">{{ e.actor.login }}</a>
                             <span ng-bind-html="eventLabel(e)"></span>
                         </li>
@@ -42,20 +51,23 @@
 
             <h3>Thank you for your collaborations!</h3>
             <a ng-href="{{ c.url }}" rel="external nofollow" ng-repeat="c in github.contributors">
-                <img style="max-width: 15%; max-height: 64px" ng-src="{{ c.avatar_url }}" alt="{{ c.login }}" title="{{ c.login }}">
+                <img style="max-width: 15%; max-height: 64px" ng-src="{{ c.avatar_url }}" alt="{{ c.login }}"
+                     title="{{ c.login }}">
             </a>
 
         </div>
         <div class="row" ng-show='github == null' ng-cloak>
             <div class="alert alert-block">
                 <h4>Uh oh...</h4>
+
                 <p>We cannot fetch repository statistics for the moment. Please try again later.</p>
             </div>
         </div>
 
         <div class="row">
             <p class="text-center text-tiny copyright">
-                &copy; 2014 <a href="https://github.com/arthurianx/articulate-angular" rel="external">Articulate Angular</a>
+                &copy; 2014 <a href="https://github.com/arthurianx/articulate-angular" rel="external">Articulate
+                Angular</a>
             </p>
 
             <ul class="list-unstyled list-inline text-center">
