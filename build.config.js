@@ -81,13 +81,16 @@ module.exports = {
             'vendor/angular-hammer/angular-hammer.js',
             'vendor/ocLazyLoad/ocLazyLoad.js',
             'vendor/angular-bootstrap/ui-bootstrap.min.js',
-            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'
+            'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+            'customlibs/highlight/highlight.pack.js',
+            'vendor/angular-highlightjs/angular-highlightjs.min.js'
 
         ],
         css: [
             'vendor/bootstrap/dist/css/bootstrap.min.css',
             'vendor/bootstrap/dist/css/bootstrap-theme.min.css',
-            'vendor/font-awesome/css/font-awesome.min.css'
+            'vendor/font-awesome/css/font-awesome.min.css',
+            'customlibs/highlight/monokai.css'
         ],
         assets: [
         ]

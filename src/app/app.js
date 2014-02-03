@@ -11,7 +11,8 @@ angular.module('articulate', [
       'anim-in-out',
       'ngTouch',
       /*VVV Providers VVV*/
-      'articulate.providers'
+      'articulate.providers',
+      'hljs'
     ])
 
     .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $githubProvider) {

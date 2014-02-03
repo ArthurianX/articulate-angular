@@ -2,4 +2,38 @@
 
     Articulate Angular Homepage
 
+    <div hljs>
+        function apiURL(type, options) {
+          var url = api + '/' + type + '?callback=JSON_CALLBACK';
+
+          if (options) {
+            angular.forEach(options, function (value, key) {
+              url += ('&' + key + '=' + value);
+            });
+          }
+
+          $log.debug('github: api url', url);
+
+          return url;
+        }
+
+        function apiCall(type, options) {
+          var deferred = $q.defer();
+
+          $http({
+            cache: true,
+            method: 'JSONP',
+            url: apiURL(type, angular.extend({}, apiURLOpts, options))
+          }).then(function (res) {
+                $log.debug('github:', type, '(' + (res.data.data ? res.data.data.length : 0) + ')', res.data.data);
+                deferred.resolve(res.data.data);
+              }, function (res) {
+                $log.error('github:', type, res);
+                deferred.reject(res);
+              });
+
+          return deferred.promise;
+        }
+    </div>
+
 </div>
