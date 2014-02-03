@@ -610,9 +610,23 @@ module.exports = function ( grunt ) {
   /**
    * A utility function to get all app JavaScript sources.
    */
+
+
+  //TODO: Create a variable for the libraries that we need to load first. (e.g. AngularJS)
   function filterForJS ( files ) {
     return files.filter( function ( file ) {
-      return file.match( /\.js$/ );
+      //console.log(files);
+      if (file !== "vendor/angular/angular.min.js") {
+        return file.match( /\.js$/ );
+      }
+    });
+  }
+  //TODO: REFACTOR THIS, IT's MESSY
+  function filterForJSMain ( files ) {
+    return files.filter( function ( file ) {
+      if (file === "vendor/angular/angular.min.js") {
+        return file.match( /\.js$/ );
+      }
     });
   }
 
@@ -636,6 +650,9 @@ module.exports = function ( grunt ) {
     var jsFiles = filterForJS( this.filesSrc ).map( function ( file ) {
       return file.replace( dirRE, '' );
     });
+    var jsFilesMain = filterForJSMain( this.filesSrc ).map( function ( file ) {
+      return file.replace( dirRE, '' );
+    });
     var cssFiles = filterForCSS( this.filesSrc ).map( function ( file ) {
       return file.replace( dirRE, '' );
     });
@@ -645,6 +662,7 @@ module.exports = function ( grunt ) {
         return grunt.template.process( contents, {
           data: {
             scripts: jsFiles,
+            scriptsMain: jsFilesMain,
             styles: cssFiles,
             version: grunt.config( 'pkg.version' )
           }
@@ -660,12 +678,14 @@ module.exports = function ( grunt ) {
    */
   grunt.registerMultiTask( 'karmaconfig', 'Process karma config templates', function () {
     var jsFiles = filterForJS( this.filesSrc );
+    var jsFilesMain = filterForJSMain( this.filesSrc );
 
     grunt.file.copy( 'karma/karma-unit.tpl.js', grunt.config( 'build_dir' ) + '/karma-unit.js', {
       process: function ( contents, path ) {
         return grunt.template.process( contents, {
           data: {
-            scripts: jsFiles
+            scripts: jsFiles,
+            scriptsMain: jsFilesMain,
           }
         });
       }

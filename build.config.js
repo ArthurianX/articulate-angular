@@ -61,7 +61,10 @@ module.exports = {
      * with our app's assets. This structure is flattened, so it is not
      * recommended that you use wildcards.
      */
-
+    //TODO: We will use primary_files as the array to load the main libraries, when the logic is done in Gruntfile.js
+    primary_files: {
+      js: ['vendor/angular/angular.min.js']
+    },
     vendor_files: {
         js: [
             'vendor/angular/angular.min.js',
