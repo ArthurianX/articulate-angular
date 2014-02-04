@@ -29,7 +29,25 @@ pre {
   background-color: #23241f;
   color: #f8f8f2;
 }
+/*
+VARS
+*/
 
+@bg: #1ABC9C;
+@mainborder: lighten(#16A085, 10%);
+@genericborder: #2C3E50;
+@grey: #ecf0f1;
+@altgrey: #BDC3C7;
+@asphalt: #2C3E50;
+@asphaltlight: #34495E;
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(fonts/fontawesome-webfont.eot?v=4.0.3);
+  src: url(fonts/fontawesome-webfont.eot?#iefix&v=4.0.3) format('embedded-opentype'), url(fonts/fontawesome-webfont.woff?v=4.0.3) format('woff'), url(fonts/fontawesome-webfont.ttf?v=4.0.3) format('truetype'), url(fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*=============================================
 ========= HomePage Styles.  //TODO: Move some of these in the GENERAL STYLES AFTER DEV.
@@ -42,9 +60,9 @@ pre {
   .navigation {
     .logo {
       float: left;
-      padding: 5px 0 0 20px;
+      padding: 6px 0 0 30px;
       img {
-        width: 85px;
+        width: 45px;
       }
     }
     .nav {
@@ -77,20 +95,120 @@ pre {
     display: block;
     width: 100%;
     //background: transparent url(green_cup.png) repeat top center;
-    border-top: 1px solid lighten(#16A085, 10%);
-    border-bottom: 1px solid lighten(#16A085, 10%);
-    background-color: #16A085;
+    border-top: 1px solid @mainborder;
+    //background-color: #16A085;
+    background: transparent url(green_pattern.png) repeat top center;
+    background-size: 25%;
+    position: relative;
+    border-bottom: 5px solid @mainborder;
+    color: @asphalt;
+
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+    h2 {
+      text-align: center;
+      color: @altgrey;
+    }
+
+    .tagline {
+      position: absolute;
+      bottom: 135px;
+    }
+
+    .well {
+      position: absolute;
+      right: 10px;
+      bottom: 15px;
+      width: 225px;
+      background: none;
+      margin: 0;
+      padding: 0;
+      border: 0px solid #fff;
+      box-shadow: 0 0 0 #fff;
+      .btn-success {
+        background-color: #34495E;
+        background-image: none;
+        box-shadow: 0 0 0 #fff;
+        border: 0px solid #fff;
+      }
+      .btn-default {
+        box-shadow: 0 0 0 #fff;
+        border: 0px solid #fff;
+      }
+    }
+
+    .stats {
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      width: 455px;
+    }
+
+
+    .round-separator {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 250px;
+      height: 250px;
+      margin: 0 0 -125px -125px;
+      background: #ECF0F1 url(square-pattern.png) repeat top center;
+      border-radius: 125px;
+      padding: 7px 5px 0px 5px;
+      box-shadow: inset 0 0 4px #000, 0 0 0px 5px @mainborder;
+      //special box-shadow: 0 -1px 0 #16a085, inset 0px 4px 0px #16A086, inset 0 0 4px #000, 0 0 1px #fff;
+      img {
+        width: 100%;
+      }
+    }
   }
 
 
 
   .homepage {
-    background-color: #f8f8f2;
+    background-color: #fff;
 
-    .hero {
-      height: 200px;
-      background-color: #BDC3C7;
+    .fourpins {
+      min-height: 150px;
+      background: @asphaltlight url(square-pattern.png) repeat top center;
+      padding: 30px;
+      .col-md-3 {
+        min-height: 50px;
+        padding: 70px 15px 5px 15px;
+        text-align: left;
+        .icon {
+          text-align: center;
+          color: #fff;
+          font-size: 40px;
+          .fa {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+          }
+        }
+        .description {
+          color: @grey;
+          .strike {
+            text-decoration: line-through;
+          }
+        }
+        &:nth-child(3), &:nth-child(4) {
+          text-align: right;
+        }
+      }
     }
+    .advantage {
+      padding: 20px;
+      min-height: 150px;
+      background-color: #fff;
+      position: relative;
+      border-bottom: 1px solid @altgrey;
+      &:nth-child(2n+1) {
+        background-color: @grey;
+      }
+
+    }
+
   }
 }
 

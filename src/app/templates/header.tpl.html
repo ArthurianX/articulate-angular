@@ -1,3 +1,30 @@
-<header class="header">
+<header class="header" ng-controller="HeaderCtrl">
+    <!--<div class="tagline">
+        <h1>articulate angular</h1>
+        <h2>a complex monkey blabbering</h2>
+    </div>-->
+
+    <div class="well">
+        <a class="btn btn-success btn-sm" rel="external" ng-href="{{ downloadUrl }}">
+            Download (<span itemprop="softwareVersion">0.0.1{{ latestTag.name }}</span>)
+        </a>
+
+        <a class="btn btn-default btn-sm" href="https://github.com/arthurianx/articulate-angular">
+            View on GitHub
+        </a>
+    </div>
+
+    <div class="stats">
+        <iframe src="http://ghbtns.com/github-btn.html?user=arthurianx&repo=articulate-angular&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=arthurianx&repo=articulate-angular&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=arthurianx&type=follow&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+    </div>
+
+    <div class="round-separator">
+        <img src="assets/angularjs-logo.png" alt=""/>
+    </div>
 
 </header>

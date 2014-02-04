@@ -15,7 +15,7 @@ angular.module('articulate', [
       'hljs'
     ])
 
-    .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $githubProvider) {
+    .config(function myAppConfig($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $githubProvider, $anchorScrollProvider) {
       $locationProvider.html5Mode(true).hashPrefix('!');
 
       $logProvider.debugEnabled(false);
@@ -25,6 +25,8 @@ angular.module('articulate', [
       $githubProvider.username('arthurianx')
           .repository('articulate-angular')
           .branch('master');
+
+      $anchorScrollProvider.disableAutoScrolling();
 
     })
 
@@ -49,6 +51,24 @@ angular.module('articulate', [
         }
       });
 
+    })
+
+    .controller('HeaderCtrl', function HeaderCtrl($scope, $q, $log, $github) {
+
+      //TODO: Make first tag, fix visuals.
+      var DOWNLOAD_URL_TEMPLATE = 'https://github.com/ArthurianX/articulate-angular/archive/master.zip',
+          FALLBACK_BRANCH = 'master';
+
+      $github.getTags().then(function (data) {
+        $scope.latestTag = data && data.length ? data[0] : {};
+        $scope.downloadUrl = DOWNLOAD_URL_TEMPLATE.replace('%REF%', $scope.latestTag.name);
+      }, function (e) {
+
+        $log.error('could not fetch latest tag; falling back to ' + FALLBACK_BRANCH, e);
+
+        $scope.latestTag = { name: FALLBACK_BRANCH };
+        $scope.downloadUrl = DOWNLOAD_URL_TEMPLATE.replace('%REF%', FALLBACK_BRANCH);
+      });
     })
 
     .controller('FooterCtrl', function FooterCtrl($scope, $q, $log, $github) {
