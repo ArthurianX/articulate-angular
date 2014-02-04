@@ -91,7 +91,7 @@ VARS
   }
 
   .header {
-    height: 500px;
+    height: 400px;
     display: block;
     width: 100%;
     //background: transparent url(green_cup.png) repeat top center;
@@ -151,9 +151,9 @@ VARS
       position: absolute;
       left: 50%;
       bottom: 0;
-      width: 250px;
-      height: 250px;
-      margin: 0 0 -125px -125px;
+      width: 200px;
+      height: 200px;
+      margin: 0 0 -100px -100px;
       background: #ECF0F1 url(square-pattern.png) repeat top center;
       border-radius: 125px;
       padding: 7px 5px 0px 5px;
@@ -205,6 +205,17 @@ VARS
       border-bottom: 1px solid @altgrey;
       &:nth-child(2n+1) {
         background-color: @grey;
+        text-align: right;
+      }
+
+      .icon {
+        text-align: center;
+        .fa {
+          font-size: 40px;
+        }
+        h3 {
+          text-align: center;
+        }
       }
 
     }

@@ -59,7 +59,8 @@ angular.module('articulate', [
       var DOWNLOAD_URL_TEMPLATE = 'https://github.com/ArthurianX/articulate-angular/archive/master.zip',
           FALLBACK_BRANCH = 'master';
 
-      $github.getTags().then(function (data) {
+      //TODO: Github is an ass, uncomment the code when working on the footer.
+      /*$github.getTags().then(function (data) {
         $scope.latestTag = data && data.length ? data[0] : {};
         $scope.downloadUrl = DOWNLOAD_URL_TEMPLATE.replace('%REF%', $scope.latestTag.name);
       }, function (e) {
@@ -68,12 +69,13 @@ angular.module('articulate', [
 
         $scope.latestTag = { name: FALLBACK_BRANCH };
         $scope.downloadUrl = DOWNLOAD_URL_TEMPLATE.replace('%REF%', FALLBACK_BRANCH);
-      });
+      });*/
     })
 
     .controller('FooterCtrl', function FooterCtrl($scope, $q, $log, $github) {
 
-      var githubCalled = false;
+      //TODO: Github is an ass, uncomment the code when working on the footer.
+      /*var githubCalled = false;
 
       if (!githubCalled) {
         // GitHub api calls
@@ -156,7 +158,7 @@ angular.module('articulate', [
         }
 
         return "TODO (" + event.type + ")";
-      };
+      };*/
 
     })
 
